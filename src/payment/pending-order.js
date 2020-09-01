@@ -6,7 +6,7 @@ class Pending extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      delivered: false,
+      delivered: true,
       info:
         "Your order has been confirmed! If you need anthing while you're waiting, hit the chat button.",
       deliveredInfo:
