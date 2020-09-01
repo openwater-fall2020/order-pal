@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Col, Row, Card, Image } from "react-bootstrap";
+import { Col, Row, Card, Image, Container } from "react-bootstrap";
 
 import menuData from "../data/menuData";
 import { Header } from './Header';
@@ -9,16 +9,21 @@ export const Menu = () => {
     return (
       <Card
         key={index}
-        style={{ width: '33%' }}
+        style={{ width: '90%' }}
+        className="shadow-sm mt-1 mb-1"
       >
         <Card.Body
+          className="w-100 p-0"
         >
           <Image
+            fluid
             src={item.url}
-            style={{ width: '200px', height: '200px' }}
+            className="w-100"
           />
         </Card.Body>
-        <Card.Title>{item.name}</Card.Title>
+        <Card.Title
+          className="text-center mt-2">{item.name}
+        </Card.Title>
       </Card>
     );
   }
@@ -26,23 +31,23 @@ export const Menu = () => {
   return (
     <div>
       <Header />
-      <Container fluid>
-        <Col>
-          <Row>
+      <Container fluid className="mt-2" >
+        <Row>
+          <Col>
             {menuItemCard(menuData[0], 0)}
-          </Row>
-          <Row>
+          </Col>
+          <Col>
             {menuItemCard(menuData[1], 1)}
-          </Row>
-        </Col>
-        <Col>
-          <Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             {menuItemCard(menuData[2], 2)}
-          </Row>
-          <Row>
+          </Col>
+          <Col>
             {menuItemCard(menuData[3], 3)}
-          </Row>
-        </Col>
+          </Col>
+        </Row>
       </Container>
     </div>
   );
