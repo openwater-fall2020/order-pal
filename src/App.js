@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container } from "react-bootstrap";
 
 import { Menu } from "./components/Menu";
-import { DishDetail } from "./components/DishDetail"
+import DishDetail from "./components/DishDetail"
 
 function App() {
   /**
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Container style={{padding: '0px'}}>
         {/* <Menu setOrder={setOrder} order={order} /> */}
-        <DishDetail setOrder={setOrder} order={order}/>
+        <DishDetail order={order}/>
       </Container>
     </div>
   );

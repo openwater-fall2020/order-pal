@@ -9,7 +9,7 @@ export default [
     alt: 'calamari dip',
     url: calamari,
     description: "Tender calamari, lightly breaded and fried. Served with signature aioili sauce.",
-    price: 11.50
+    price: 11.99
   },
   {
     name: "Chicken Quesadilla",
