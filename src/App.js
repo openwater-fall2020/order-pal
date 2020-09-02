@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Container } from "react-bootstrap";
 
 import { Menu } from "./components/Menu";
+import { Header } from "./components/Header";
 
 function App() {
   /**
@@ -10,8 +11,9 @@ function App() {
    */
   const [order, setOrder] = useState([]);
   return (
-    <div className="App">
-      <Container>
+    <div className="App" style={{ height: '100%', maxHeight: '100vh' }}>
+      <Header style={{ height: '15%' }} />
+      <Container style={{ padding: '0px' }}>
         <Menu setOrder={setOrder} order={order} />
       </Container>
     </div>

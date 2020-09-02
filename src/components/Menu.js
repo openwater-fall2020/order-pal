@@ -6,8 +6,6 @@ import waiterAvatar from "../assets/waiter-avatar.png";
 import plusImage from "../assets/plus.png";
 import minusImage from "../assets/minus.png";
 
-import { Header } from './Header';
-
 // Pass server object in by props
 export const Menu = ({ order, setOrder }) => {
   const [showRecs, setShowRecs] = useState(false);
@@ -19,7 +17,16 @@ export const Menu = ({ order, setOrder }) => {
     borderRadius: '30px',
     borderColor: orangeColor,
     padding: '16px 32px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: '10px',
+    width: 'f'
+  };
+
+  const imgsStyle = {
+    float: 'left',
+    width: '100%',
+    height: '150px',
+    objectFit: 'cover',
   };
 
   const server = {
@@ -29,11 +36,12 @@ export const Menu = ({ order, setOrder }) => {
       menuData[1],
       menuData[2],
     ],
+    message: "Here are some of my favorites, perfect for a small group!",
   };
 
   const recommendationsCard = () => {
     return (
-      <Card style={{ textAlign: 'center' }}>
+      <Card style={{ textAlign: 'center', position: 'absolute', margin: '0 auto', zIndex: '1', width: '100%', left: '0px', borderRadius: '10px' }}>
         <p>
           Here are some of my favorites, perfect for a small group!
         </p>
@@ -45,7 +53,7 @@ export const Menu = ({ order, setOrder }) => {
         <Button style={gradientColor}>
           Chat
         </Button>
-      </Card >
+      </Card>
     );
   };
   /**
@@ -56,17 +64,18 @@ export const Menu = ({ order, setOrder }) => {
     return (
       <Card
         key={index}
-        className="shadow-sm mt-1 mb-1 w-100"
+        className="shadow-sm mt-1 mb-1 mt-1"
+        style={{ height: '95%' }}
         onClick={() => addItemToOrder(item)}
       >
         <Card.Body
-          className="w-100 p-0"
+          className="p-0 mb-0"
         >
           <Image
             fluid
             src={item.url}
-            style={{ objectFit: "cover", float: "left" }}
-            className="w-100 mx-100 h-90"
+            style={imgsStyle}
+            className="w-100 mx-100"
           />
         </Card.Body>
         <Card.Title
@@ -80,6 +89,7 @@ export const Menu = ({ order, setOrder }) => {
   };
 
   /**
+   * @todo replace this function with opening a single menu item view
    * @param {Object} item 
    */
   const addItemToOrder = (item) => {
@@ -97,58 +107,99 @@ export const Menu = ({ order, setOrder }) => {
   };
 
   return (
-    <div>
-      <Header />
-      <Card className="w-75" style={{ position: "absolute", top: '10%', left: '12%', zIndex: 1, borderRadius: '15px' }}>
-        <Container >
-          <Row className="row-cols-3" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }} >
-            <Col className="pr-0" >
+    <div
+      style={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
+    >
+      {/* Recommendations card */}
+      <Card
+        className="w-100"
+        style={{
+          borderRadius: '15px',
+          marginTop: '-5px',
+          height: 'auto',
+          minHeight: '100%',
+          maxWidth: '85%',
+        }}
+      >
+        <Container
+          style={{
+            paddingLeft: '10px',
+            paddingRight: '10px',
+          }}
+        >
+          <Row
+            className="row-cols-3"
+            style={{
+              display: "flex",
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              alignItems: 'center'
+            }}
+            noGutters
+          >
+            <Col className="pr-0" xs="auto" >
               <Image src={waiterAvatar} />
             </Col>
-            <Col className="pr-0 pl-0">
+            <Col className="pr-0 pl-0 mt-3 ml-2 mr-1" xs="auto">
               <p>Need recommendations?</p>
             </Col>
-            <Col>
-              <Image src={showRecs ? minusImage : plusImage} onClick={() => setShowRecs(!showRecs)} />
+            <Col xs="auto">
+              <Image
+                src={showRecs ? minusImage : plusImage}
+                onClick={() => setShowRecs(!showRecs)}
+              />
+            </Col>
+          </Row>
+          {showRecs &&
+            recommendationsCard()
+          }
+        </Container>
+      </Card>
+      <Container style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        height: '100%'
+      }}
+      >
+        <Container fluid>
+          <Form.Row style={{ top: '10%' }}>
+            <Col>Starters</Col>
+            <Col>Entrees</Col>
+            <Col>Sides</Col>
+            <Col>Drinks</Col>
+          </Form.Row>
+        </Container>
+        <Container fluid className="mt-2" >
+          <Row className="row-cols-2">
+            <Col className="menuItemCard">
+              {menuItemCard(menuData[0], 0)}
+            </Col>
+            <Col className="menuItemCard">
+              {menuItemCard(menuData[1], 1)}
+            </Col>
+          </Row>
+          <Row className="row-cols-2">
+            <Col className="menuItemCard">
+              {menuItemCard(menuData[2], 2)}
+            </Col>
+            <Col className="menuItemCard">
+              {menuItemCard(menuData[3], 3)}
             </Col>
           </Row>
         </Container>
-        {showRecs &&
-          recommendationsCard()
-        }
-      </Card>
-      <Container fluid>
-        <Form.Row className="">
-          <Col>Starters</Col>
-          <Col>Entrees</Col>
-          <Col>Sides</Col>
-          <Col>Drinks</Col>
-        </Form.Row>
+        <Container style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button className="bg-white" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold' }}>
+            Review Order ({order.length})
+          </Button>
+        </Container>
       </Container>
-      <Container fluid className="mt-2" >
-        <Row className="row-cols-2">
-          <Col>
-            {menuItemCard(menuData[0], 0)}
-          </Col>
-          <Col>
-            {menuItemCard(menuData[1], 1)}
-          </Col>
-        </Row>
-        <Row className="row-cols-2">
-          <Col>
-            {menuItemCard(menuData[2], 2)}
-          </Col>
-          <Col>
-            {menuItemCard(menuData[3], 3)}
-          </Col>
-        </Row>
-      </Container>
-      <Container style={{ display: 'flex', justifyContent: 'center' }}>
-        <Button className="bg-white" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold' }}>
-          Review Order ({order.length})
-        </Button>
-      </Container>
-    </div>
+    </div >
   );
 };
 
