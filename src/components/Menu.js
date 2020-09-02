@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Col, Row, Card, Image, Container, Form, Button, } from "react-bootstrap";
 
+import { Header } from "./Header";
+
 import menuData from "../data/menuData";
 import waiterAvatar from "../assets/waiter-avatar.png";
 import plusImage from "../assets/plus.png";
@@ -115,6 +117,7 @@ export const Menu = ({ order, setOrder }) => {
         alignItems: 'center'
       }}
     >
+      <Header />
       {/* Recommendations card */}
       <Card
         className="w-100"
