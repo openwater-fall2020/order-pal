@@ -10,7 +10,6 @@ import plusImage from "../assets/plus.png";
 import minusImage from "../assets/minus.png";
 
 export const DishDetail = ({ setOrder, order }) => {
-
     const [showRecs, setShowRecs] = useState(false);
     const server = {
         name: 'Server\'s Name',
@@ -102,8 +101,8 @@ export const DishDetail = ({ setOrder, order }) => {
                 </Row>
                 <Form inline style={{ alignItems: 'center' }}>
                     <Form.Row className="row-cols-2" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', margin: '10px', align: 'center' }}>
-                        <Form.Control type="number" className="bg-white" placeholder="1" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold', borderRadius: '15px' }} />
-                        <Button style={gradientButton} type="submit">Add to Order</Button>
+                        <Form.Control type="number" className="bg-white" placeholder="1" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold', borderRadius: '15px' }} onChange={this.handleChange} />
+                        <Button style={gradientButton} type="button" onClick={this.onPress}>{this.state.buttonText}</Button>
                     </Form.Row>
 
                     <Form.Row className="row-cols-1 w-75" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginTop: '-10px' }}>
@@ -118,11 +117,10 @@ export const DishDetail = ({ setOrder, order }) => {
     /**
      * @param {Object} item 
      */
-    const addItemToOrder = (item, n) => {
-        for (var i = 0; i < n; i++) {
-            setOrder([...order, item]);
-        }
+    const addItemToOrder = (item) => {
+        setOrder([...order, item]);
     };
+
     return (
         <div>
             <Header />
@@ -182,8 +180,8 @@ export const DishDetail = ({ setOrder, order }) => {
                 </Form.Row>
             </Container>
             <Container fluid className="mt-2">
-                {menuItemCard(menuData[0], 0)}
+                {this.menuItemCard(menuData[this.state.itemIndex], this.state.itemIndex)}
             </Container>
         </div>
-    )
-};
+    );
+}

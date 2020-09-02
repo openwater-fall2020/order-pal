@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Pending from "./payment/pending-order.js";
+import Receipt from "./payment/receipt.js";
+import Payment from "./payment/payment-portal.js";
+import Welcome from "./welcome.js"
 import { Container } from "react-bootstrap";
-
 import { Menu } from "./components/Menu";
 import { DishDetail } from "./components/DishDetail"
 
@@ -11,13 +14,17 @@ function App() {
    */
   const [order, setOrder] = useState([]);
   return (
-    <div className="App"
-      style={{ height: '100%', maxHeight: '100vh' }}>
-      <Container style={{ padding: '0px' }}>
-        {/* <Menu setOrder={setOrder} order={order} /> */}
-        <DishDetail setOrder={setOrder} order={order} />
-      </Container>
-    </div>
+    <Router>
+      <div className="App"
+        style={{ height: '100%', maxHeight: '100vh' }}>
+        {/* <Route path="/" exact component={Welcome} /> */}
+        {/* <Route path="/pending" component={Pending} /> */}
+        {/* <Route path="/receipt" component={Receipt} /> */}
+        {/* <Route path="/payment" component={Payment} /> */}
+        <DishDetail order={order} setOrder={setOrder} />
+      </div>
+    </Router>
+
   );
 }
 
