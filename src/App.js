@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useState}from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Pending from "./payment/pending-order.js";
 import Receipt from "./payment/receipt.js";
 import Payment from "./payment/payment-portal.js";
 import Welcome from "./welcome.js"
+import { Container } from "react-bootstrap";
+import { Menu } from "./components/Menu";
+import { DishDetail } from "./components/DishDetail"
 
 function App() {
+  /**
+   * Global order state that holds the user's order as an array of menu item objects
+   */
+  const [order, setOrder] = useState([]);
   return (
     <Router>
       <div className="App">
@@ -14,7 +21,8 @@ function App() {
 		<Route path="/receipt" component={Receipt} />
 		<Route path="/payment" component={Payment} />
       </div>
-    </Router>
+</Router>
+
   );
 }
 
