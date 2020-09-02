@@ -41,6 +41,7 @@ const styles = {
     boxShadow: "0px 4px rgba(0,0,0,0.1)",
     display: "flex",
 	padding: 10,
+	fontFamily: "Comic Sans",
   },
   avatar: {
     flex: 1,
@@ -52,6 +53,7 @@ const styles = {
     flex: 3,
 	padding: 30,
 	fontSize: 20,
-	alignItems: "center"
+	alignItems: "center",
+	fontFamily: "Comic Sans",
   },
 };

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import floatingChatButton from "./floating-chat-button.png";
 
 class Payment extends Component {
   constructor(props) {
@@ -24,66 +25,75 @@ class Payment extends Component {
   render() {
     return (
       <div class="return div">
-          <div
-            class="header"
-            style={styles.topTab}
-          >
+        <div class="gradient" style={styles.topTab}>
+          <div class="header" style={styles.headerContainer}>
             {/*header div for title and chat button*/}
             <h1 style={styles.header}>Payment</h1>
+            <span class="chatButtonContainer">
+              <a href="#">
+                {/* TODO add link to chat page */}
+                <img src={floatingChatButton} width="100px" height="100px" />
+              </a>
+            </span>
           </div>
-		  <p style = {styles.text}>{this.state.paymentText}</p>
-        <form
-          class="payment info"
-          style={
-            (styles.container, { display: "flex", flexDirection: "column", paddingTop: 30 })
-          }
-        >
-          <input
-            type="text"
-            name="name"
-            style={styles.input}
-            value={this.state.name}
-            onChange={this.handleOnChange}
-            placeholder="Name"
-          />
-          <input
-            type="text"
-            name="cardNumber"
-            style={styles.input}
-            value={this.state.cardNumber}
-            onChange={this.handleOnChange}
-            placeholder="Card Number"
-          />
-          <div
-            class="other info"
-            style={{display: "flex"}}
+        </div>
+        <div class="container" style={styles.container}>
+          <p style={styles.text}>{this.state.paymentText}</p>
+
+          <form
+            class="payment info"
+            style={
+              (styles.container,
+              { display: "flex", flexDirection: "column", paddingTop: 30 })
+            }
           >
             <input
-              type="date"
-              name="date"
+              type="text"
+              name="name"
               style={styles.input}
-              value={this.state.date}
+              value={this.state.name}
               onChange={this.handleOnChange}
+              placeholder="Name"
             />
             <input
               type="text"
-              name="cvv"
+              name="cardNumber"
               style={styles.input}
-              value={this.state.cvv}
+              value={this.state.cardNumber}
               onChange={this.handleOnChange}
-              placeholder="CVV"
+              placeholder="Card Number"
             />
-            <input
-              type="text"
-              name="zip"
-              style={styles.input}
-              value={this.state.zip}
-              onChange={this.handleOnChange}
-              placeholder="Zip Code"
-            />
-          </div>
-        </form>
-        <div class="button payment" style = {{display: "flex", justifyContent: "center", padding: 35}}>
+            <div class="other info" style={{ display: "flex" }}>
+              <input
+                type="date"
+                name="date"
+                style={styles.input}
+                value={this.state.date}
+                onChange={this.handleOnChange}
+              />
+              <input
+                type="text"
+                name="cvv"
+                style={styles.input}
+                value={this.state.cvv}
+                onChange={this.handleOnChange}
+                placeholder="CVV"
+              />
+              <input
+                type="text"
+                name="zip"
+                style={styles.input}
+                value={this.state.zip}
+                onChange={this.handleOnChange}
+                placeholder="Zip Code"
+              />
+            </div>
+          </form>
+        </div>
+        <div
+          class="button payment"
+          style={{ display: "flex", justifyContent: "center", padding: 35 }}
+        >
           <button style={styles.button}> Make Payment</button>
         </div>
       </div>
@@ -96,10 +106,11 @@ export default Payment;
 const styles = {
   topTab: {
     margin: "0 auto",
-    height: "10vh",
+    height: "15vh",
     width: "100vw",
     textAlign: "center",
     justifyContent: "center",
+	fontFamily: "Comic Sans",
     alignItems: "center",
     background: "rgb(2,0,36)",
     background:
@@ -107,15 +118,29 @@ const styles = {
   },
   header: {
     color: "white",
-    fontFamily: "Aktiv Grotesk",
-	paddingTop: 30,
+    paddingTop: 30,
     paddingBottom: 30,
+fontFamily: "Comic Sans",
+    fontSize: 40,
+  },
+  headerContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
+  bottomTab: {
+    background: "white",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "15vh",
+    display: "flex",
   },
   container: {
     background: "white",
     alignItems: "center",
     justifyContent: "center",
-    height: "90vh",
   },
   button: {
     background: "rgb(2,0,36)",
@@ -129,6 +154,7 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
+	fontFamily: "Comic Sans",
   },
   input: {
     borderRadius: 30,
@@ -140,11 +166,13 @@ const styles = {
     padding: 10,
     margin: 10,
     flex: 1,
+	fontFamily: "Comic Sans",
   },
   text: {
     flex: 3,
-	fontSize: 20,
-	textAlign: "center",
-	paddingTop: 30
+    fontSize: 20,
+    textAlign: "center",
+    paddingTop: 30,
+	fontFamily: "Comic Sans",
   },
 };

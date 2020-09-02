@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NotiCard from "./server-noticard.js";
 import { Link } from "react-router-dom";
+import floatingChatButton from "./floating-chat-button.png";
 
 class Pending extends Component {
   constructor(props) {
@@ -22,12 +23,15 @@ class Pending extends Component {
     return (
       <div class="return div">
         <div clas="gradient" style={styles.container}>
-          <div
-            class="header"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
+          <div class="header" style={styles.headerContainer}>
             {/*header div for title and chat button*/}
             <h1 style={styles.header}>Pending Order</h1>
+            <span class="chatButtonContainer">
+              <a href="#">
+                {/* TODO add link to chat page */}
+                <img src={floatingChatButton} width="100px" height="100px" />
+              </a>
+            </span>
           </div>
           {this.state.delivered ? (
             <div class="card container">
@@ -39,7 +43,10 @@ class Pending extends Component {
                 <NotiCard text={this.state.deliveredInfo} />
               </div>
               <div class="enjoy">
-                <h1 style={styles.header}>Enjoy Your Meal</h1>
+                <h1 style={{color: "white",
+			    paddingTop: "6vh",
+			    paddingBottom: "3vh",
+			    fontFamily: "Aktiv Grotesk",}}>Enjoy Your Meal</h1>
               </div>
             </div>
           ) : (
@@ -49,9 +56,9 @@ class Pending extends Component {
           )}
         </div>
         <div class="white part" style={styles.bottomTab}>
-		<Link to="/receipt">
-          <button style={styles.button}> I'm Ready to Pay</button>
-		  </Link>
+          <Link to="/receipt">
+            <button style={styles.button}> I'm Ready to Pay</button>
+          </Link>
         </div>
       </div>
     );
@@ -66,6 +73,7 @@ const styles = {
     height: "85vh",
     width: "100vw",
     textAlign: "center",
+	fontFamily: "Comic Sans",
     justifyContent: "center",
     alignItems: "center",
     background: "rgb(2,0,36)",
@@ -76,7 +84,15 @@ const styles = {
     color: "white",
     paddingTop: 30,
     paddingBottom: 30,
-    fontFamily: "Aktiv Grotesk",
+    fontFamily: "Comic Sans",
+	fontSize: 40
+  },
+  headerContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   bottomTab: {
     background: "white",
@@ -97,5 +113,6 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
+	fontFamily: "Comic Sans",
   },
 };
