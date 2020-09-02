@@ -28,8 +28,7 @@ class Welcome extends Component {
 		  </div>
         </div>
         <div class="white part" style={styles.bottomTab}>
-          {/* TODO link to server bio page*/}
-          <Link to="/pending">
+          <Link to="/serverwelcome">
             <button style={styles.button}> Begin Ordering</button>
           </Link>
           <p> </p>

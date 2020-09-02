@@ -73,11 +73,13 @@ export const ServerWelcome = () => {
       </Card>
       <p style={styles.chatText}>Chat with me</p>
       <p style={{ textAlign: 'center' }}>If you have questions during your order process or need to directly speak with me, you can use chat button at anytime.</p>
-      <Button
+      <Link to="/menu">
+    <Button
         style={styles.openMenuButton}
       >
         Open Menu
       </Button>
+    </Link>
     </Container>
   );
 };

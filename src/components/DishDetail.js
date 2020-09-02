@@ -63,6 +63,9 @@ const recommendationsCard = () => {
 export default class DishDetail extends React.Component {
     constructor(props) {
         super(props);
+        if (!props.order){
+            props.order = [];
+        }
         this.state = {
             order: props.order,
             buttonText: "Add to Order",
