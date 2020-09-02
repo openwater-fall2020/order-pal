@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NotiCard from "./server-noticard.js";
 import { Link } from "react-router-dom";
 import floatingChatButton from "./floating-chat-button.png";
+import line from "./pending-line.png";
 
 class Pending extends Component {
   constructor(props) {
@@ -38,7 +39,9 @@ class Pending extends Component {
               <div class="notifications">
                 <NotiCard text={this.state.info} />
               </div>
-              <div class="loading" style={{ padding: 90 }}></div>
+              <div class="loading" style={{ padding: 90 }}>
+			  <img src={line} height="100px" alt="Line" />
+			  </div>
               <div class="notifications">
                 <NotiCard text={this.state.deliveredInfo} />
               </div>
@@ -46,7 +49,7 @@ class Pending extends Component {
                 <h1 style={{color: "white",
 			    paddingTop: "6vh",
 			    paddingBottom: "3vh",
-			    fontFamily: "Aktiv Grotesk",}}>Enjoy Your Meal</h1>
+			    fontFamily: "Comic Sans",}}>Enjoy Your Meal</h1>
               </div>
             </div>
           ) : (

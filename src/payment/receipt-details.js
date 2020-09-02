@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import line from "./line.png";
+import line from "./receipt-line.png";
 
 class Details extends Component {
   constructor(props) {
