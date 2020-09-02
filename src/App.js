@@ -17,10 +17,10 @@ function App() {
     <Router>
       <div className="App"
         style={{ height: '100%', maxHeight: '100vh' }}>
-        {/* <Route path="/" exact component={Welcome} /> */}
-        {/* <Route path="/pending" component={Pending} /> */}
-        {/* <Route path="/receipt" component={Receipt} /> */}
-        {/* <Route path="/payment" component={Payment} /> */}
+        <Route path="/" exact component={Welcome} />
+        <Route path="/pending" component={Pending} />
+        <Route path="/receipt" component={Receipt} />
+        <Route path="/payment" component={Payment} />
         <DishDetail order={order} setOrder={setOrder} />
       </div>
     </Router>
