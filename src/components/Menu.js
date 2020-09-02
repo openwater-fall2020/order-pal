@@ -3,6 +3,8 @@ import { Col, Row, Card, Image, Container, Form, Button, } from "react-bootstrap
 
 import { Header } from "./Header";
 
+import { Link } from "react-router-dom";
+
 import menuData from "../data/menuData";
 import waiterAvatar from "../assets/waiter-avatar.png";
 import plusImage from "../assets/plus.png";
@@ -68,17 +70,18 @@ export const Menu = ({ order, setOrder }) => {
         key={index}
         className="shadow-sm mt-1 mb-1 mt-1"
         style={{ height: '95%' }}
-        onClick={() => addItemToOrder(item)}
       >
         <Card.Body
           className="p-0 mb-0"
         >
-          <Image
-            fluid
-            src={item.url}
-            style={imgsStyle}
-            className="w-100 mx-100"
-          />
+          <Link to="/dishdetail">
+            <Image
+              fluid
+              src={item.url}
+              style={imgsStyle}
+              className="w-100 mx-100"
+            />
+          </Link>
         </Card.Body>
         <Card.Title
           className="text-center mt-2"
@@ -89,25 +92,6 @@ export const Menu = ({ order, setOrder }) => {
       </Card>
     );
   };
-
-  /**
-   * @todo replace this function with opening a single menu item view
-   * @param {Object} item 
-   */
-  const addItemToOrder = (item) => {
-    setOrder([...order, item]);
-  };
-
-  /**
-   * @param {Object} item 
-   */
-  const removeItemFromOrder = (item) => {
-    const itemIndex = order.indexOf(item);
-    if (itemIndex !== -1) {
-      setOrder(order.splice(itemIndex, 1));
-    }
-  };
-
   return (
     <div
       style={{
@@ -124,8 +108,8 @@ export const Menu = ({ order, setOrder }) => {
         style={{
           borderRadius: '15px',
           marginTop: '-5px',
-          height: 'auto',
-          minHeight: '100%',
+          // height: 'auto',
+          // minHeight: '100%',
           maxWidth: '85%',
         }}
       >
@@ -167,7 +151,7 @@ export const Menu = ({ order, setOrder }) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        height: '100%'
+        height: 'auto'
       }}
       >
         <Container fluid>

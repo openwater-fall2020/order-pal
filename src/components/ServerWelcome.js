@@ -5,6 +5,8 @@ import { Card, Button, Container, Image } from "react-bootstrap";
 import serverAvatar from '../assets/waiter-avatar-large.png';
 import chatButton from '../assets/floating-chat-button.png';
 
+import { Link } from "react-router-dom";
+
 // Server will come in as an object
 export const ServerWelcome = () => {
   const styles = {
@@ -74,12 +76,12 @@ export const ServerWelcome = () => {
       <p style={styles.chatText}>Chat with me</p>
       <p style={{ textAlign: 'center' }}>If you have questions during your order process or need to directly speak with me, you can use chat button at anytime.</p>
       <Link to="/menu">
-    <Button
-        style={styles.openMenuButton}
-      >
-        Open Menu
+        <Button
+          style={styles.openMenuButton}
+        >
+          Open Menu
       </Button>
-    </Link>
+      </Link>
     </Container>
   );
 };

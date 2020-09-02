@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from "./Header";
 import { Col, Row, Card, Image, Container, Form, Button, } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import '../assets/stylesheets/general.css'
 
@@ -44,17 +45,7 @@ const gradientFont = {
 const recommendationsCard = () => {
     return (
         <Card style={{ textAlign: 'center', position: 'absolute', margin: '0 auto', zIndex: '1', width: '100%', left: '0px', borderRadius: '10px' }}>
-            <p>
-                Here are some of my favorites, perfect for a small group!
-        </p>
-            {server.recommendations.map((item, index) => (
-                <p style={{ color: mainColor }} key={index}>
-                    {item.name}
-                </p>
-            ))}
-            <Button style={gradientColor}>
-                Chat
-        </Button>
+            <p>This dish goes great with the House Lemonade!</p>
         </Card>
     );
 };
@@ -63,11 +54,13 @@ const recommendationsCard = () => {
 export default class DishDetail extends React.Component {
     constructor(props) {
         super(props);
-        if (!props.order){
-            props.order = [];
+        let order = props.order;
+        const setOrder = props.setOrder;
+        if (!props.order) {
+            order = [];
         }
         this.state = {
-            order: props.order,
+            order: order,
             buttonText: "Add to Order",
             n: 1,
             showRecs: false,
@@ -80,6 +73,12 @@ export default class DishDetail extends React.Component {
         this.setState({
             buttonText: "Added to Order!"
         })
+        /**
+         * @todo fix settings the order
+         */
+        for (let i = 0; i < this.state.n; ++i) {
+            this.props.setOrder([...this.props.order, menuData[this.state.itemIndex]]);
+        }
         this.addItemToOrder(menuData[this.state.itemIndex])
     }
 
@@ -133,7 +132,9 @@ export default class DishDetail extends React.Component {
                     </Form.Row>
 
                     <Form.Row className="row-cols-1 w-75" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginTop: '-10px' }}>
-                        <Button style={gradientButton}>Back to Starters</Button>
+                        <Link to="/menu">
+                            <Button style={gradientButton}>Back to Starters</Button>
+                        </Link>
                     </Form.Row>
                 </Form>
 
@@ -150,10 +151,7 @@ export default class DishDetail extends React.Component {
         }
     };
 
-
     render() {
-
-
         return (
             <div
                 style={{
@@ -164,14 +162,12 @@ export default class DishDetail extends React.Component {
                 }}
             >
                 <Header />
-                {/* Recommendations card */}
                 <Card
                     className="w-100"
                     style={{
                         borderRadius: '15px',
                         marginTop: '-5px',
                         height: 'auto',
-                        minHeight: '100%',
                         maxWidth: '85%',
                     }}
                 >
@@ -182,7 +178,7 @@ export default class DishDetail extends React.Component {
                         }}
                     >
                         <Row
-                            className="row-cols-3"
+                            className="row-cols-2"
                             style={{
                                 display: "flex",
                                 flexDirection: 'row',
@@ -192,13 +188,7 @@ export default class DishDetail extends React.Component {
                             noGutters
                         >
                             <Col className="pr-0" xs="auto" >
-                                <Image src={waiterAvatar} />
-                            </Col>
-                            <Col className="pr-0 pl-0 mt-3 ml-2 mr-1" xs="auto">
-                                <p>Need recommendations?</p>
-                            </Col>
-                            <Col xs="auto">
-                                <Image src={this.state.showRecs ? minusImage : plusImage} onClick={() => this.setState(prevState => ({ showRecs: !prevState.showRecs }))} />
+                                <p style={{ margin: '0px' }}>This dish goes great with the <span style={{ color: orangeColor }}>House Lemonade!</span></p>
                             </Col>
                         </Row>
                     </Container>
