@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import avatar from "../assets/waiter-avatar.png";
 
 class NotiCard extends Component {
 
@@ -14,9 +15,9 @@ class NotiCard extends Component {
         <div class="avatar" >
           <img
 		  	style={styles.avatar}
-            src="https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=ji6Xj8tv"
-			height= "100vh"
-			width = "100vw"
+            src={avatar}
+			height= "90vh"
+			width = "90vw"
 			alt = "Avatar"
           />
         </div>
@@ -42,6 +43,7 @@ const styles = {
     display: "flex",
 	padding: 10,
 	fontFamily: "Comic Sans",
+	flexDirection: "row"
   },
   avatar: {
     flex: 1,
