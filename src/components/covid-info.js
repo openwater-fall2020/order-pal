@@ -38,7 +38,7 @@ const styles = {
   },
   text: {
     flex: 3,
-    fontSize: 17,
+    fontSize: 20,
     alignItems: "center",
     fontFamily: "Comic Sans",
 	paddingLeft: 10,
