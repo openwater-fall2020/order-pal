@@ -19,20 +19,21 @@ class Welcome extends Component {
           <div class="header" style={styles.headerContainer}>
             {/*header div for title and chat button*/}
             <div class="welcome image">
-              <img src={image} style = {styles.image} />
+              <img src={image} style={styles.image} />
             </div>
             <h1 style={styles.header}>Welcome to OrderPal!</h1>
           </div>
-		  <COVIDInfo/>
+		  <div>
+          <COVIDInfo />
 		  </div>
-          <div class="white part" style={styles.bottomTab}>
-            {/* TODO link to server bio page*/}
-            <Link to="/pending">
-              <button style={styles.button}> Begin Ordering</button>
-            </Link>
-			<p>     </p>
-          </div>
-
+        </div>
+        <div class="white part" style={styles.bottomTab}>
+          {/* TODO link to server bio page*/}
+          <Link to="/pending">
+            <button style={styles.button}> Begin Ordering</button>
+          </Link>
+          <p> </p>
+        </div>
       </div>
     );
   }
@@ -73,6 +74,7 @@ const styles = {
     justifyContent: "center",
     height: "30vh",
     display: "flex",
+    paddingBottom: 40,
   },
   button: {
     background: "rgb(2,0,36)",
@@ -89,7 +91,7 @@ const styles = {
     fontFamily: "Comic Sans",
   },
   image: {
-        width: "100vw",
-        height: "40vh",
-    }
+    width: "100vw",
+    height: "40vh",
+  },
 };

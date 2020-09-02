@@ -28,19 +28,17 @@ export default COVIDInfo;
 const styles = {
   container: {
     margin: "0 auto",
-    maxHeight: 300,
     width: "80vw",
-    justifyContent: "space-between",
     background: "white",
     borderRadius: 15,
-    boxShadow: "0px 4px rgba(0,0,0,0.1)",
+    boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
     display: "flex",
     padding: 10,
     fontFamily: "Comic Sans",
   },
   text: {
     flex: 3,
-    fontSize: 20,
+    fontSize: 17,
     alignItems: "center",
     fontFamily: "Comic Sans",
 	paddingLeft: 10,
