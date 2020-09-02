@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from "./Header";
 import { Col, Row, Card, Image, Container, Form, Button, } from "react-bootstrap";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import '../assets/stylesheets/general.css'
 
 import menuData from "../data/menuData";
-import waiterAvatar from "../assets/waiter-avatar.png";
-import plusImage from "../assets/plus.png";
-import minusImage from "../assets/minus.png";
 
-// const [showRecs, setShowRecs] = useState(false);
 const server = {
     name: 'Server\'s Name',
     recommendations: [

@@ -98,7 +98,7 @@ export const Menu = ({ order, setOrder }) => {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
       <Header />
@@ -108,8 +108,6 @@ export const Menu = ({ order, setOrder }) => {
         style={{
           borderRadius: '15px',
           marginTop: '-5px',
-          // height: 'auto',
-          // minHeight: '100%',
           maxWidth: '85%',
         }}
       >
@@ -181,8 +179,17 @@ export const Menu = ({ order, setOrder }) => {
           </Row>
         </Container>
         <Container style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button className="bg-white" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold' }}>
-            Review Order ({order.length})
+          <Button
+            className="bg-white"
+            style={{
+              borderColor: mainColor,
+              color: mainColor,
+              fontWeight: 'bold'
+            }}
+          >
+            <Link to="/pending" style={{ textDecoration: 'none', color: mainColor }}>
+              Review Order ({order.length})
+            </Link>
           </Button>
         </Container>
       </Container>
