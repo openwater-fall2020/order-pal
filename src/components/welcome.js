@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import COVIDInfo from "./covid-info.js";
 import { Link } from "react-router-dom";
-import image from "./payment/welcome.png";
+import image from "../assets/welcome.png";
 
 class Welcome extends Component {
   constructor(props) {
