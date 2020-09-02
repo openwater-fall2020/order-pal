@@ -45,7 +45,7 @@ const gradientFont = {
 
 const recommendationsCard = () => {
     return (
-        <Card style={{ textAlign: 'center' }}>
+        <Card style={{ textAlign: 'center', position: 'absolute', margin: '0 auto', zIndex: '1', width: '100%', left: '0px', borderRadius: '10px' }}>
             <p>
                 Here are some of my favorites, perfect for a small group!
         </p>
@@ -57,7 +57,7 @@ const recommendationsCard = () => {
             <Button style={gradientColor}>
                 Chat
         </Button>
-        </Card >
+        </Card>
     );
 };
 
@@ -158,18 +158,49 @@ export default class DishDetail extends React.Component {
 
 
         return (
-            <div>
+            <div
+                style={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}
+            >
                 <Header />
-                <Card className="w-75" style={{ position: "absolute", top: '10%', left: '12%', zIndex: 1, borderRadius: '15px' }}>
-                    <Container >
-                        <Row className="row-cols-3" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }} >
-                            <Col className="pr-0" >
+                {/* Recommendations card */}
+                <Card
+                    className="w-100"
+                    style={{
+                        borderRadius: '15px',
+                        marginTop: '-5px',
+                        height: 'auto',
+                        minHeight: '100%',
+                        maxWidth: '85%',
+                    }}
+                >
+                    <Container
+                        style={{
+                            paddingLeft: '10px',
+                            paddingRight: '10px',
+                        }}
+                    >
+                        <Row
+                            className="row-cols-3"
+                            style={{
+                                display: "flex",
+                                flexDirection: 'row',
+                                justifyContent: 'space-around',
+                                alignItems: 'center'
+                            }}
+                            noGutters
+                        >
+                            <Col className="pr-0" xs="auto" >
                                 <Image src={waiterAvatar} />
                             </Col>
-                            <Col className="pr-0 pl-0">
+                            <Col className="pr-0 pl-0 mt-3 ml-2 mr-1" xs="auto">
                                 <p>Need recommendations?</p>
                             </Col>
-                            <Col>
+                            <Col xs="auto">
                                 <Image src={this.state.showRecs ? minusImage : plusImage} onClick={() => this.setState(prevState => ({ showRecs: !prevState.showRecs }))} />
                             </Col>
                         </Row>
@@ -192,4 +223,4 @@ export default class DishDetail extends React.Component {
             </div>
         );
     }
-};
+}
