@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card, Button, Container, Image } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import serverAvatar from '../assets/waiter-avatar-large.png';
 import chatButton from '../assets/floating-chat-button.png';

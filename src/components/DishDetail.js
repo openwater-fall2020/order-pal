@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from "./Header";
 import { Col, Row, Card, Image, Container, Form, Button, } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 import '../assets/stylesheets/general.css'
 
@@ -63,11 +65,12 @@ const recommendationsCard = () => {
 export default class DishDetail extends React.Component {
     constructor(props) {
         super(props);
+        let order = props.order;
         if (!props.order){
-            props.order = [];
+            order = [];
         }
         this.state = {
-            order: props.order,
+            order: order,
             buttonText: "Add to Order",
             n: 1,
             showRecs: false,
