@@ -127,18 +127,18 @@ export const Menu = ({ order, setOrder }) => {
       </Container>
       <Container fluid className="mt-2" >
         <Row className="row-cols-2">
-          <Col>
+          <Col className="menuItemCard">
             {menuItemCard(menuData[0], 0)}
           </Col>
-          <Col>
+          <Col className="menuItemCard">
             {menuItemCard(menuData[1], 1)}
           </Col>
         </Row>
         <Row className="row-cols-2">
-          <Col>
+          <Col className="menuItemCard"> 
             {menuItemCard(menuData[2], 2)}
           </Col>
-          <Col>
+          <Col className="menuItemCard">
             {menuItemCard(menuData[3], 3)}
           </Col>
         </Row>

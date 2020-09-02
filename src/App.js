@@ -11,7 +11,7 @@ function App() {
   const [order, setOrder] = useState([]);
   return (
     <div className="App">
-      <Container>
+      <Container style={{padding: '0px'}}>
         <Menu setOrder={setOrder} order={order} />
       </Container>
     </div>
