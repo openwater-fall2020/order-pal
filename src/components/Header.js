@@ -3,11 +3,16 @@ import floatingChatButton from "../assets/floating-chat-button.png"
 import { Form, Image, Container, Row, Col } from "react-bootstrap";
 import '../assets/stylesheets/general.css'
 
-const headerBackground = {background: 'linear-gradient(225.82deg, #F94A4A -0.87%, #FF720D 98.77%)'};
-
+const orangeColor = "#FF720D";
+const gradientColor = {
+  background: "linear-gradient(180deg, #F94A4A 18.23%, #FF720D 100%)",
+  borderColor: orangeColor,
+  padding: '16px 32px',
+  fontWeight: 'bold'
+};
 export const Header = () => {
   return (
-    <div className="header w-100" style={headerBackground} width="414px">
+    <div className="header w-100" style={gradientColor} width="414px">
       <Container>
         <Row className="row-cols-2" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }} >
           <Col>

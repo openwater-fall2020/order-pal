@@ -117,7 +117,7 @@ export const Menu = ({ order, setOrder }) => {
           recommendationsCard()
         }
       </Card>
-      <Container fluid>
+      <Container fluid align="center">
         <Form.Row className="">
           <Col>Starters</Col>
           <Col>Entrees</Col>
