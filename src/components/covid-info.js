@@ -8,7 +8,7 @@ class COVIDInfo extends Component {
     return (
       <div class="card" style={styles.container}>
         <div class="text" style={styles.text}>
-          <p>
+          <p style={{paddingTop: 20}}>
             Here's how we're keeping you & our employees safe during COVID-19.
           </p>
           <div>
