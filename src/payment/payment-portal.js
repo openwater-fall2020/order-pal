@@ -32,7 +32,7 @@ class Payment extends Component {
             <span class="chatButtonContainer">
               <a href="#">
                 {/* TODO add link to chat page */}
-                <img src={floatingChatButton} width="100px" height="100px" />
+                <img src={floatingChatButton} width="100px" height="100px"  />
               </a>
             </span>
           </div>
@@ -175,4 +175,5 @@ fontFamily: "Comic Sans",
     paddingTop: 30,
 	fontFamily: "Comic Sans",
   },
+
 };
