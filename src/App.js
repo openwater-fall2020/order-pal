@@ -1,4 +1,4 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Pending from "./components/pending-order.js";
 import Receipt from "./components/receipt.js";
@@ -6,7 +6,7 @@ import Payment from "./components/payment-portal.js";
 import Welcome from "./components/welcome.js"
 import { Container } from "react-bootstrap";
 import { Menu } from "./components/Menu";
-import DishDetail from "./components/DishDetail"
+import { DishDetail } from "./components/DishDetail"
 
 function App() {
   /**
@@ -15,13 +15,15 @@ function App() {
   const [order, setOrder] = useState([]);
   return (
     <Router>
-      <div className="App">
-		<Route path="/" exact component={Welcome} />
-        <Route path="/pending" component={Pending} />
-		<Route path="/receipt" component={Receipt} />
-		<Route path="/payment" component={Payment} />
+      <div className="App"
+        style={{ height: '100%', maxHeight: '100vh' }}>
+        {/* <Route path="/" exact component={Welcome} /> */}
+        {/* <Route path="/pending" component={Pending} /> */}
+        {/* <Route path="/receipt" component={Receipt} /> */}
+        {/* <Route path="/payment" component={Payment} /> */}
+        <DishDetail order={order} setOrder={setOrder} />
       </div>
-</Router>
+    </Router>
 
   );
 }

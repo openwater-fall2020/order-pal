@@ -7,6 +7,14 @@ h2 {
     color: #FFFFFF;
 }
 
+body {
+    height: 100%;
+}
+
+html {
+    height: 100%
+}
+
 p {
     font-family: Neue Haas Unica W1G;
     font-style: normal;
