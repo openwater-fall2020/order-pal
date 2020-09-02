@@ -6,7 +6,7 @@ import Payment from "./components/payment-portal.js";
 import Welcome from "./components/welcome.js"
 import { Container } from "react-bootstrap";
 import { Menu } from "./components/Menu";
-import { DishDetail } from "./components/DishDetail"
+import DishDetail from "./components/DishDetail"
 
 function App() {
   /**
