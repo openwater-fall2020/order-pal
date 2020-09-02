@@ -67,16 +67,22 @@ export default class DishDetail extends React.Component {
             order: props.order,
             buttonText: "Add to Order",
             n: 1,
-            showRecs: false
+            showRecs: false,
+            itemIndex: 0
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
     onPress = () => {
         this.setState({
             buttonText: "Added to Order!"
         })
+        this.addItemToOrder(menuData[this.state.itemIndex])
     }
     
+    handleChange(event) {
+        this.setState({ n: event.target.value })
+    }
     /**
    * @param {Object} item an item object from menuData
    * @param {index} index the index of the item in menuData
@@ -119,7 +125,7 @@ export default class DishDetail extends React.Component {
             </Row>
             <Form inline style={{alignItems: 'center'}}>
                     <Form.Row className="row-cols-2" style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', margin: '10px', align: 'center' }}>
-                        <Form.Control type="number" className="bg-white" placeholder="1" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold', borderRadius: '15px' }} />
+                        <Form.Control type="number" className="bg-white" placeholder="1" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold', borderRadius: '15px' }} onChange={this.handleChange}/>
                         <Button style={gradientButton} type="button" onClick={this.onPress}>{this.state.buttonText}</Button>
                     </Form.Row>
 
@@ -137,7 +143,7 @@ export default class DishDetail extends React.Component {
      */
     addItemToOrder = (item) => {
         for(var i = 0; i < this.state.n; i++){
-            this.state.setState({order: [...this.state.order, item]});
+            this.setState({order: [...this.state.order, item]});
         }
     };
 
@@ -175,7 +181,7 @@ export default class DishDetail extends React.Component {
                 </Form.Row>
             </Container>
             <Container fluid className="mt-2">
-                {this.menuItemCard(menuData[0], 0)}
+                {this.menuItemCard(menuData[this.state.itemIndex], this.state.itemIndex)}
             </Container>
         </div>
     );}
