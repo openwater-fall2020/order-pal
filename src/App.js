@@ -21,6 +21,8 @@ function App() {
         <Route path="/pending" component={Pending} />
         <Route path="/receipt" component={Receipt} />
         <Route path="/payment" component={Payment} />
+    		<Route path="/dishdetail" exact component={DishDetail} />
+		    <Route path="/serverwelcome" exact component={ServerWelcome} />
         <DishDetail order={order} setOrder={setOrder} />
       </div>
     </Router>
