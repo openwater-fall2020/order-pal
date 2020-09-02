@@ -7,6 +7,7 @@ import Welcome from "./components/welcome.js"
 import { Container } from "react-bootstrap";
 import { Menu } from "./components/Menu";
 import DishDetail from "./components/DishDetail"
+import ServerWelcome from "./components/ServerWelcome"
 
 function App() {
   /**
@@ -23,7 +24,6 @@ function App() {
         <Route path="/payment" component={Payment} />
     		<Route path="/dishdetail" exact component={DishDetail} />
 		    <Route path="/serverwelcome" exact component={ServerWelcome} />
-        <DishDetail order={order} setOrder={setOrder} />
       </div>
     </Router>
 
