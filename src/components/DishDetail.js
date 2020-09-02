@@ -46,17 +46,7 @@ const gradientFont = {
 const recommendationsCard = () => {
     return (
         <Card style={{ textAlign: 'center', position: 'absolute', margin: '0 auto', zIndex: '1', width: '100%', left: '0px', borderRadius: '10px' }}>
-            <p>
-                Here are some of my favorites, perfect for a small group!
-        </p>
-            {server.recommendations.map((item, index) => (
-                <p style={{ color: mainColor }} key={index}>
-                    {item.name}
-                </p>
-            ))}
-            <Button style={gradientColor}>
-                Chat
-        </Button>
+            <p>This dish goes great with the House Lemonade!</p>
         </Card>
     );
 };
@@ -167,7 +157,6 @@ export default class DishDetail extends React.Component {
                 }}
             >
                 <Header />
-                {/* Recommendations card */}
                 <Card
                     className="w-100"
                     style={{
@@ -185,7 +174,7 @@ export default class DishDetail extends React.Component {
                         }}
                     >
                         <Row
-                            className="row-cols-3"
+                            className="row-cols-2"
                             style={{
                                 display: "flex",
                                 flexDirection: 'row',
@@ -195,13 +184,7 @@ export default class DishDetail extends React.Component {
                             noGutters
                         >
                             <Col className="pr-0" xs="auto" >
-                                <Image src={waiterAvatar} />
-                            </Col>
-                            <Col className="pr-0 pl-0 mt-3 ml-2 mr-1" xs="auto">
-                                <p>Need recommendations?</p>
-                            </Col>
-                            <Col xs="auto">
-                                <Image src={this.state.showRecs ? minusImage : plusImage} onClick={() => this.setState(prevState => ({ showRecs: !prevState.showRecs }))} />
+                                <p style={{margin: '0px'}}>This dish goes great with the <span style={{color: orangeColor}}>House Lemonade!</span></p>
                             </Col>
                         </Row>
                     </Container>
