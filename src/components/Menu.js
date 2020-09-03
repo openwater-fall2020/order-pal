@@ -181,9 +181,11 @@ export const Menu = ({ order, setOrder }) => {
           </Row>
         </Container>
         <Container style={{ display: 'flex', justifyContent: 'center' }}>
+		 <Link to="/pending">
           <Button className="bg-white" style={{ borderColor: mainColor, color: mainColor, fontWeight: 'bold' }}>
-            Review Order ({order.length})
+            Confirm Order ({order.length})
           </Button>
+		  </Link>
         </Container>
       </Container>
     </div >

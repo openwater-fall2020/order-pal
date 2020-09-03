@@ -8,14 +8,14 @@ class COVIDInfo extends Component {
     return (
       <div class="card" style={styles.container}>
         <div class="text" style={styles.text}>
-          <p style={{paddingTop: 20}}>
+          <p style={{paddingTop: 20, fontSize: 20,}}>
             Here's how we're keeping you & our employees safe during COVID-19.
           </p>
           <div>
-            <p style = {{paddingTop: 25, marginLeft: 50, textAlign: "left"}}> Masks required</p>
-            <p style = {{marginLeft: 50, textAlign: "left"}}> Social distancing enforced </p>
-            <p style = {{marginLeft: 50, textAlign: "left"}}> Limited capacity </p>
-            <p style = {{marginLeft: 50, textAlign: "left"}} >Sanitizing between customers </p>
+            <p style = {{paddingTop: 25, marginLeft: 50, textAlign: "left", fontSize: 20,}}> Masks required</p>
+            <p style = {{marginLeft: 50, textAlign: "left", fontSize: 20,}}> Social distancing enforced </p>
+            <p style = {{marginLeft: 50, textAlign: "left", fontSize: 20,}}> Limited capacity </p>
+            <p style = {{marginLeft: 50, textAlign: "left", fontSize: 20,}} >Sanitizing between customers </p>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ const styles = {
   },
   text: {
     flex: 3,
-    fontSize: 20,
+    fontSize: 30,
     alignItems: "center",
     fontFamily: "Comic Sans",
 	paddingLeft: 10,

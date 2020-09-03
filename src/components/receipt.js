@@ -38,9 +38,9 @@ class Receipt extends Component {
         <div class="container" style={styles.container}>
           {this.state.recommendation ? (
             <div class="content" style = {{display: "flex", justifyContent: "space-between", flexDirection: "column"}}>
-			<h1> Order Items </h1>
+			<h1 style = {{paddingTop: 20}}> Order Items </h1>
 			<Details/>
-			<h1> Tips </h1>
+			<h1 style={{paddingTop: 20}}> Tips </h1>
               <div class="notifications">
 			  <p style={styles.text}> Your server today was Mira </p>
                 <NotiCard text={this.state.recommendationText} style= {{paddingTop: 10}}/>

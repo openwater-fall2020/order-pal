@@ -23,7 +23,7 @@ class Pending extends Component {
   render() {
     return (
       <div class="return div">
-        <div clas="gradient" style={styles.container}>
+        <div class="gradient" style={styles.container}>
           <div class="header" style={styles.headerContainer}>
             {/*header div for title and chat button*/}
             <h1 style={styles.header}>Pending Order</h1>
@@ -35,21 +35,29 @@ class Pending extends Component {
             </span>
           </div>
           {this.state.delivered ? (
-            <div class="card container">
+            <div class="card container" style={{background: "rgb(2,0,36)",
+		    background:
+		      "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,37,140,1) 0%, rgba(9,9,121,1) 0%, rgba(255,114,13,1) 0%, rgba(255,86,101,1) 78%, rgba(249,74,74,1) 100%)",}}>
               <div class="notifications">
                 <NotiCard text={this.state.info} />
               </div>
-              <div class="loading" style={{ padding: 90 }}>
-			  <img src={line} height="100px" alt="Line" />
-			  </div>
+              <div class="loading" style={{ padding: 20 }}>
+                <img src={line} height="100px" alt="Line" />
+              </div>
               <div class="notifications">
                 <NotiCard text={this.state.deliveredInfo} />
               </div>
               <div class="enjoy">
-                <h1 style={{color: "white",
-			    paddingTop: "6vh",
-			    paddingBottom: "3vh",
-			    fontFamily: "Comic Sans",}}>Enjoy Your Meal</h1>
+                <h1
+                  style={{
+                    color: "white",
+                    paddingTop: "6vh",
+                    paddingBottom: "3vh",
+                    fontFamily: "Comic Sans",
+                  }}
+                >
+                  Enjoy Your Meal
+                </h1>
               </div>
             </div>
           ) : (
@@ -76,7 +84,7 @@ const styles = {
     height: "85vh",
     width: "100vw",
     textAlign: "center",
-	fontFamily: "Comic Sans",
+    fontFamily: "Comic Sans",
     justifyContent: "center",
     alignItems: "center",
     background: "rgb(2,0,36)",
@@ -88,7 +96,7 @@ const styles = {
     paddingTop: 30,
     paddingBottom: 30,
     fontFamily: "Comic Sans",
-	fontSize: 40
+    fontSize: 40,
   },
   headerContainer: {
     display: "flex",
@@ -116,6 +124,6 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
-	fontFamily: "Comic Sans",
+    fontFamily: "Comic Sans",
   },
 };

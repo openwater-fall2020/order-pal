@@ -12,7 +12,7 @@ class NotiCard extends Component {
   render() {
     return (
       <div class="card" style={styles.container}>
-        <div class="avatar" >
+        <div class="avatar" style={{display:"flex"}}>
           <img
 		  	style={styles.avatar}
             src={avatar}
@@ -49,6 +49,7 @@ const styles = {
     flex: 1,
 	borderRadius: "50%",
 	objectFit: "cover",
+	alignSelf: "center",
 
   },
   text: {

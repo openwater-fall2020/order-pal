@@ -32,37 +32,44 @@ class Payment extends Component {
             <span class="chatButtonContainer">
               <a href="#">
                 {/* TODO add link to chat page */}
-                <img src={floatingChatButton} width="100px" height="100px"  />
+                <img src={floatingChatButton} width="100px" height="100px" />
               </a>
             </span>
           </div>
         </div>
         <div class="container" style={styles.container}>
+          <br />
           <p style={styles.text}>{this.state.paymentText}</p>
 
           <form
             class="payment info"
-            style={
-              (styles.container,
-              { display: "flex", flexDirection: "column", paddingTop: 30 })
-            }
+			style={{
+              display: "flex",
+              flexDirection: "column",
+              paddingTop: 30,
+              background: "white",
+              alignItems: "center"
+            }}
           >
+
             <input
               type="text"
               name="name"
-              style={styles.input}
+              style={styles.bigInput}
               value={this.state.name}
               onChange={this.handleOnChange}
               placeholder="Name"
             />
+
             <input
               type="text"
               name="cardNumber"
-              style={styles.input}
+              style={styles.bigInput}
               value={this.state.cardNumber}
               onChange={this.handleOnChange}
               placeholder="Card Number"
             />
+
             <div class="other info" style={{ display: "flex" }}>
               <input
                 type="date"
@@ -110,7 +117,6 @@ const styles = {
     width: "100vw",
     textAlign: "center",
     justifyContent: "center",
-	fontFamily: "Comic Sans",
     alignItems: "center",
     background: "rgb(2,0,36)",
     background:
@@ -120,7 +126,7 @@ const styles = {
     color: "white",
     paddingTop: 30,
     paddingBottom: 30,
-fontFamily: "Comic Sans",
+    fontFamily: "Comic Sans",
     fontSize: 40,
   },
   headerContainer: {
@@ -154,7 +160,18 @@ fontFamily: "Comic Sans",
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
-	fontFamily: "Comic Sans",
+    fontFamily: "Comic Sans",
+  },
+  bigInput: {
+    borderRadius: 30,
+    background: "white",
+    color: "black",
+    textAlign: "left",
+    fontSize: "11",
+    boxShadow: "0px 4px rgba(0,0,0,0.1)",
+    padding: 10,
+    margin: 10,
+	width: 645,
   },
   input: {
     borderRadius: 30,
@@ -165,15 +182,12 @@ fontFamily: "Comic Sans",
     boxShadow: "0px 4px rgba(0,0,0,0.1)",
     padding: 10,
     margin: 10,
-    flex: 1,
-	fontFamily: "Comic Sans",
   },
   text: {
     flex: 3,
     fontSize: 20,
     textAlign: "center",
     paddingTop: 30,
-	fontFamily: "Comic Sans",
+    fontFamily: "Comic Sans",
   },
-
 };
