@@ -4,7 +4,6 @@ import Pending from "./components/pending-order.js";
 import Receipt from "./components/receipt.js";
 import Payment from "./components/payment-portal.js";
 import Welcome from "./components/welcome.js"
-import { Container } from "react-bootstrap";
 import { Menu } from "./components/Menu";
 import DishDetail from "./components/DishDetail"
 import ServerWelcome from "./components/ServerWelcome"
@@ -17,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App"
-        style={{ height: '100%', maxHeight: '100vh' }}>
+        style={{ height: '100%', maxHeight: '100vh', width: '100%', maxWidth: '100vw' }}>
         <Route path="/" exact component={Welcome} />
         <Route path="/pending" component={Pending} />
         <Route path="/receipt" component={Receipt} />
