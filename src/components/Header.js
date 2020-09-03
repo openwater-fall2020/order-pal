@@ -1,5 +1,5 @@
 import React from 'react';
-import floatingChatButton from "../assets/floating-chat-button.png"
+import floatingChatButton from "../assets/floating-chat-button.png";
 import { Form, Image, Container, Row, Col } from "react-bootstrap";
 import '../assets/stylesheets/general.css'
 
@@ -20,16 +20,16 @@ export const Header = () => {
           </Col>
           <Col align="right">
             <a href="#"> {/* TODO add link to chat page */}
-              <Image thumbnail src={floatingChatButton} width="32px" height="32px" />
+             <img src={floatingChatButton} width="100px" height="100px" />
             </a>
           </Col>
         </Row>
         {/* <Container className="headerTitleContainer"> */}
-          
+
         {/* </Container> */}
         {/* <Container className="chatButtonContainer" align="right"> */}
         <div align="right">
-         
+
         </div>
         {/* </Container> */}
       </Container>
