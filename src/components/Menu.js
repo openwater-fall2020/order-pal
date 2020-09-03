@@ -54,9 +54,11 @@ export const Menu = ({ order, setOrder }) => {
             {item.name}
           </p>
         ))}
+		<Link to= "/chat">
         <Button style={gradientColor}>
           Chat
         </Button>
+		</Link>
       </Card>
     );
   };
