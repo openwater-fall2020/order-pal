@@ -188,10 +188,9 @@ export const Menu = ({ order, setOrder }) => {
             }}
           >
             <Link to="/pending" style={{ textDecoration: 'none', color: mainColor }}>
-              Review Order ({order.length})
+              Confirm Order ({order.length})
             </Link>
           </Button>
-		  </Link>
         </Container>
       </Container>
     </div >
