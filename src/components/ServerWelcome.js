@@ -41,6 +41,7 @@ export const ServerWelcome = () => {
       style={{
         height: '40%',
         background: styles.gradient,
+        width: '100%'
       }}
     >
       <div
