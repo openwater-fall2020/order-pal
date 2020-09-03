@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div className="App"
-        style={{ height: '100%', maxHeight: '100vh' }}>
+        style={{ height: '100%', maxHeight: '100vh', width: '100%', maxWidth: '100vw' }}>
         <Route path="/" exact component={Welcome} />
         <Route path="/pending" component={Pending} />
         <Route path="/receipt" component={Receipt} />
