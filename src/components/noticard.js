@@ -48,7 +48,7 @@ const styles = {
     boxShadow: "0px 4px rgba(0,0,0,0.1)",
     display: "flex",
     padding: 10,
-	fontFamily: "Comic Sans",
+	fontFamily: "Open Sans",
   },
   text: {
     padding: 30,
@@ -61,7 +61,7 @@ const styles = {
   textArea: {
     fontSize: 20,
     textAlign: "right",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
 	width: "75px"
   },
 };

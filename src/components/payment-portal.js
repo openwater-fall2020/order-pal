@@ -43,15 +43,14 @@ class Payment extends Component {
 
           <form
             class="payment info"
-			style={{
+            style={{
               display: "flex",
               flexDirection: "column",
               paddingTop: 30,
               background: "white",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
-
             <input
               type="text"
               name="name"
@@ -126,7 +125,7 @@ const styles = {
     color: "white",
     paddingTop: 30,
     paddingBottom: 30,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
     fontSize: 40,
   },
   headerContainer: {
@@ -160,7 +159,7 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
   },
   bigInput: {
     borderRadius: 30,
@@ -171,7 +170,7 @@ const styles = {
     boxShadow: "0px 4px rgba(0,0,0,0.1)",
     padding: 10,
     margin: 10,
-	width: 645,
+    width: 645,
   },
   input: {
     borderRadius: 30,
@@ -188,6 +187,6 @@ const styles = {
     fontSize: 20,
     textAlign: "center",
     paddingTop: 30,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
   },
 };

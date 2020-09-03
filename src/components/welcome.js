@@ -23,9 +23,9 @@ class Welcome extends Component {
             </div>
             <h1 style={styles.header}>Welcome to OrderPal!</h1>
           </div>
-		  <div>
-          <COVIDInfo />
-		  </div>
+          <div>
+            <COVIDInfo />
+          </div>
         </div>
         <div class="white part" style={styles.bottomTab}>
           <Link to="/serverwelcome">
@@ -45,7 +45,7 @@ const styles = {
     margin: "0 auto",
     height: "70vh",
     width: "100vw",
-    textAlign: "center",
+    fontFamily: "Open Sans",
     fontFamily: "Comic Sans",
     justifyContent: "center",
     alignItems: "center",
@@ -57,7 +57,7 @@ const styles = {
     color: "white",
     paddingTop: 20,
     paddingBottom: 20,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
     fontSize: 40,
   },
   headerContainer: {
@@ -87,7 +87,7 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
   },
   image: {
     width: "100vw",

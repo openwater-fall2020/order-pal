@@ -84,7 +84,7 @@ const styles = {
     height: "85vh",
     width: "100vw",
     textAlign: "center",
-    fontFamily: "Comic Sans",
+fontFamily: "Open Sans",
     justifyContent: "center",
     alignItems: "center",
     background: "rgb(2,0,36)",
@@ -95,7 +95,7 @@ const styles = {
     color: "white",
     paddingTop: 30,
     paddingBottom: 30,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
     fontSize: 40,
   },
   headerContainer: {
@@ -124,6 +124,6 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
   },
 };

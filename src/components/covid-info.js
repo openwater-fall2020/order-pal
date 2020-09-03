@@ -8,7 +8,7 @@ class COVIDInfo extends Component {
     return (
       <div class="card" style={styles.container}>
         <div class="text" style={styles.text}>
-          <p style={{paddingTop: 20, fontSize: 20,}}>
+          <p style={{paddingTop: 20, fontSize: 20, textAlign:"center"}}>
             Here's how we're keeping you & our employees safe during COVID-19.
           </p>
           <div>
@@ -34,13 +34,13 @@ const styles = {
     boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
     display: "flex",
     padding: 10,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
   },
   text: {
     flex: 3,
     fontSize: 30,
     alignItems: "center",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
 	paddingLeft: 10,
 	paddingRight: 10
   },

@@ -49,7 +49,7 @@ const styles = {
   boldText: {
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
     flex: 25,
   },
 
@@ -57,12 +57,12 @@ const styles = {
     alignSelf: "flex-end",
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
     flex: 1,
   },
   text: {
     flex: 25,
     fontSize: 13,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
   },
 };

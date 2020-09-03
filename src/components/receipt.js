@@ -81,7 +81,7 @@ const styles = {
     color: "white",
     paddingTop: 30,
     paddingBottom: 30,
-    fontFamily: "Comic Sans",
+    fontFamily: "Open Sans",
     fontSize: 40,
   },
   headerContainer: {
@@ -115,12 +115,12 @@ const styles = {
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
-	fontFamily: "Comic Sans",
+	fontFamily: "Open Sans",
   },
   text: {
     flex: 3,
     fontSize: 20,
     textAlign: "center",
-	fontFamily: "Comic Sans",
+	fontFamily: "Open Sans",
   },
 };
